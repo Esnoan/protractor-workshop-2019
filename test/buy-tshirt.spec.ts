@@ -12,10 +12,6 @@ import {
 } from '../src/page';
 
 describe('Buy a t-shirt', () => {
-  beforeEach(() => {
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
-  });
-
   const menuContentPage: MenuContentPage = new MenuContentPage();
   const productListPage: ProductListPage = new ProductListPage();
   const productAddedModalPage: ProductAddedModalPage = new ProductAddedModalPage();
@@ -28,7 +24,7 @@ describe('Buy a t-shirt', () => {
 
   it('then should be bought a t-shirt', async () => {
     await browser.get('http://automationpractice.com/');
-    await browser.sleep(10000);
+
     await menuContentPage.goToTShirtMenu();
     await browser.sleep(3000);
     await productListPage.addToCart();
