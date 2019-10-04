@@ -26,31 +26,21 @@ describe('Buy a t-shirt', () => {
     await browser.get('http://automationpractice.com/');
 
     await menuContentPage.goToTShirtMenu();
-    await browser.sleep(3000);
     await productListPage.addToCart();
-    await browser.sleep(3000);
     await productAddedModalPage.proceedToCheckout();
-    await browser.sleep(3000);
     await orderSummaryPage.proceedToCheckout();
-    await browser.sleep(3000);
 
     await signInStepPage.login();
-    await browser.sleep(3000);
 
     await addressStepPage.proceedToCheckout();
-    await browser.sleep(3000);
 
     await shippingStepPage.acceptTermsOfService();
-    await browser.sleep(3000);
 
     await shippingStepPage.proceedToCheckout();
-    await browser.sleep(3000);
 
     await paymentStepPage.goToPayByBankWire();
-    await browser.sleep(3000);
 
     await paymentStepPage.confirmOrder();
-    await browser.sleep(3000);
 
     const textConfirmation = await summaryStepPage.getTextConfirmation();
 
